@@ -13,7 +13,7 @@ const SubDropDown = () => {
       <div>
         <div className="flex items-center justify-between gap-4">
           <h5 className="flex flex-col bg-white py-1 px-3 rounded-md w-full">
-            <span className="text-softBlack">Price from:</span>
+            <span className="text-softBlack font-normal">Price from:</span>
             <span className="font-bold text-softBlack">$21 000</span>
           </h5>
           <h5 className="flex flex-col bg-white py-1 px-3 rounded-md w-full">
@@ -25,19 +25,19 @@ const SubDropDown = () => {
 
         <ul>
           <li className="flex items-center gap-1 bg-white rounded-md  mb-3">
-            <Checkbox id="check" color="blue" defaultChecked />
+            <Checkbox id="check" color="red" defaultChecked />
             <label htmlFor="check" className="text-softBlack text-sm">
               Possible bargaining
             </label>
           </li>
           <li className="flex items-center gap-1 bg-white rounded-md mb-3">
-            <Checkbox id="check" color="blue" defaultChecked />
+            <Checkbox id="check" color="red" defaultChecked />
             <label htmlFor="check" className="text-softBlack text-sm">
               Exchange for real estate
             </label>
           </li>
           <li className="flex items-center gap-1 bg-white rounded-md ">
-            <Checkbox id="check" color="blue" defaultChecked />
+            <Checkbox id="check" color="red" defaultChecked />
             <label htmlFor="check" className="text-softBlack text-sm">
               Car exchange
             </label>
