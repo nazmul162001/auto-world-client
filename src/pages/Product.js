@@ -29,7 +29,7 @@ const Product = ({ data }) => {
       </div>
       {/* car image  */}
       <div className='car-image my-3'>
-        <img className='h-full w-full' src='car.png' alt='' />
+        <img className='h-full w-full' src={img} alt='' />
       </div>
       {/* more info  */}
       <div className='flex justify-between text-[12px]'>
