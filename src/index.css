@@ -1,3 +1,29 @@
+/* Roboto Condensed font for special word */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Reset default css */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* common class preset */
+
+.logo {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.navigation {
+  overflow: auto;
+}
+.navigation::-webkit-scrollbar {
+  width: 0;
+  opacity: 0;
+}

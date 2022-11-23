@@ -1,10 +1,11 @@
+import Layout from "./components/Layout/Layout";
+import AllRoutes from "./routes/AllRoutes";
 function App() {
   return (
-    <div className='App'>
-      <h1>Hello Bangladesh</h1>
-      <h1 className='text-3xl font-bold text-center underline'>Hello world!</h1>
-    </div>
-  )
+    <>
+      <Layout />
+    </>
+  );
 }
 
-export default App
+export default App;
