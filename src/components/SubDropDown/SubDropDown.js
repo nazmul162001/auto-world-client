@@ -3,16 +3,12 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const SubDropDown = () => {
-  const item = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1 },
-  };
   return (
     <motion.div
       initial={{ opacity: 0, height: 0 }}
       animate={{ opacity: 1, height: 260 }}
       transition={{ duration: 0.5 }}
-      className="block mt-5"
+      className="block  p-5"
     >
       <div>
         <div className="flex items-center justify-between gap-4">
@@ -25,7 +21,8 @@ const SubDropDown = () => {
             <span className="font-bold text-softBlack">$21 000</span>
           </h5>
         </div>
-        <input className="w-full mt-3" type="range" />
+        <input className="w-full mt-3 " type="range" />
+
         <ul>
           <li className="flex items-center gap-1 bg-white rounded-md  mb-3">
             <Checkbox id="check" color="blue" defaultChecked />
