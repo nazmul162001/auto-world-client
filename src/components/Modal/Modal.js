@@ -20,9 +20,12 @@ const Modal = ({ open, handleOpen }) => {
     const engine = e.target.engine.value;
     const transmission = e.target.transmission.value;
     const price = e.target.price.value;
-
+  
     // post data to database here
     console.log(name, transmission, price, img, mileage, location, engine)
+
+    // close modal
+    handleOpen()
   }
 
   return (
@@ -86,7 +89,6 @@ const Modal = ({ open, handleOpen }) => {
                 </CardBody>
                 <CardFooter className='pt-0'>
                   <Button
-                  onClick={handleOpen}
                     type='submit'
                     className='bg-secondary text-primary'
                     fullWidth
