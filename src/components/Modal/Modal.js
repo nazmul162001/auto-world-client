@@ -9,6 +9,7 @@ import {
   Input,
   DialogBody,
 } from '@material-tailwind/react'
+import {AiOutlineClose} from 'react-icons/ai'
 
 const Modal = ({ open, handleOpen }) => {
   const handleSubmit = (e) => {
@@ -32,7 +33,8 @@ const Modal = ({ open, handleOpen }) => {
     <>
       <Fragment>
         <Dialog size='md' open={open} handler={handleOpen}>
-          <h2 className='text-center mt-5 text-2xl'>Sell Your Dream Car</h2>
+          <h2 className='text-center mt-5 text-2xl relative'>Sell Your Dream Car</h2>
+          <span onClick={()=> handleOpen()} className='absolute top-6 right-8 p-2 bg-secondary text-primary rounded-full'><AiOutlineClose className='text-xl' /> </span>
           <DialogBody>
             <form onSubmit={handleSubmit} className='w-full'>
               <Card className='w-full'>

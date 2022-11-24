@@ -39,10 +39,10 @@ const Product = ({ data }) => {
     <div className='my-card p-5 bg-white rounded'>
       <div className='car-name flex justify-between'>
         <div className='car-info'>
-          <p>
-            {createdDay}, <span>{createdTime}</span>
+          <p className='text-softBlack'>
+            {createdDay}, <span className='text-gray'>{createdTime}</span>
           </p>
-          <h4 className='font-bold'>{carName}</h4>
+          <h4 className='font-bold text-softBlack'>{carName}</h4>
         </div>
         <div className='flex justify-center items-center rounded bg-secondary text-primary px-4'>
           <AiOutlineStar className='' />
@@ -50,30 +50,30 @@ const Product = ({ data }) => {
       </div>
       {/* car image  */}
       <div className='car-image my-3'>
-        <img className='h-full w-full' src={img} alt='' />
+        <img className='h-auto md:h-[155px] w-full' src={img} alt='' />
       </div>
       {/* more info  */}
       <div className='flex justify-between text-[12px]'>
         <div>
-          <p className='mb-2 text-[14px] lg:text-[11px]'>
-            Mileage: <span className='font-bold'>{mileage}</span>{' '}
+          <p className='mb-2 text-[14px] lg:text-[11px] text-gray'>
+            Mileage: <span className='font-bold text-softBlack'>{mileage}</span>{' '}
           </p>
-          <p className='mb-2 text-[14px] lg:text-[11px]'>
-            Engine: <span className='font-bold'>{engine}</span>{' '}
+          <p className='mb-2 text-[14px] lg:text-[11px] text-gray'>
+            Engine: <span className='font-bold text-softBlack'>{engine}</span>{' '}
           </p>
         </div>
         <div>
-          <p className='mb-2 text-[14px] lg:text-[11px]'>
-            Location: <span className='font-bold'>{location}</span>{' '}
+          <p className='mb-2 text-[14px] lg:text-[11px] text-gray'>
+            Location: <span className='font-bold text-softBlack'>{location}</span>{' '}
           </p>
-          <p className='mb-2 text-[14px] lg:text-[11px]'>
-            Transmission: <span className='font-bold'>{transmission}</span>{' '}
+          <p className='mb-2 text-[14px] lg:text-[11px] text-gray'>
+            Transmission: <span className='font-bold text-softBlack'>{transmission}</span>{' '}
           </p>
         </div>
       </div>
       {/* price  */}
       <div className='flex justify-between items-center mt-2'>
-        <h2 className='font-bold'>{price}$</h2>
+        <h2 className='font-extrabold text-softBlack'>{price}$</h2>
         <Button onClick={() => handleDetails(_id)} className='bg-primary'>
           More Details
         </Button>
