@@ -31,7 +31,7 @@ const Modal = ({ open, handleOpen }) => {
   return (
     <>
       <Fragment>
-        <Dialog open={open} handler={handleOpen}>
+        <Dialog size='md' open={open} handler={handleOpen}>
           <h2 className='text-center mt-5 text-2xl'>Sell Your Dream Car</h2>
           <DialogBody>
             <form onSubmit={handleSubmit} className='w-full'>
