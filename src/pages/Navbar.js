@@ -3,7 +3,7 @@ import React from "react";
 import { AiOutlineMenu, AiOutlineMenuFold } from "react-icons/ai";
 import { CiSearch } from "react-icons/ci";
 
-const Navbar = ({ show, setShow }) => {
+const Navbar = ({ setShow, handleOpen }) => {
   return (
     <nav className="h-[70px] lg:h-[56px] border-b-2 bg-[#F5F5F5] border-[#E6E6E6] w-full sticky top-0 left-0">
       <section className="w-full bg-green h-full justify-between grid grid-cols-3">
@@ -28,7 +28,7 @@ const Navbar = ({ show, setShow }) => {
         </div>
         {/* sell a car  */}
         <div className="flex items-center justify-end mr-3 col-span-2 md:col-span-1">
-          <Button className="rounded-none shadow-none hover:shadow-none w-[185px] bg-secondary text-primary capitalize lg:px-16 mx-3 py-3">
+          <Button onClick={handleOpen} className="rounded-none shadow-none hover:shadow-none w-[185px] bg-secondary text-primary capitalize lg:px-16 mx-3 py-3">
             Sell a Car
           </Button>
           <span className="p-2 bg-white">
