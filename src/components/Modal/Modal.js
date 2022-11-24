@@ -17,7 +17,15 @@ import {
 const Modal = ({ open, handleOpen }) => {
   const handleSubmit = (e) => {
     e.preventDefault()
-    const name = e.target.carName.value
+    const name = e.target.carName.value;
+    const img = e.target.url.value;
+    const mileage = e.target.mileage.value;
+    const location = e.target.location.value;
+    const engine = e.target.engine.value;
+    const transmission = e.target.transmission.value;
+    const price = e.target.price.value;
+
+    console.log(name, transmission, price, img, mileage, location, engine)
   }
 
   return (
@@ -45,7 +53,7 @@ const Modal = ({ open, handleOpen }) => {
                   />
                   <Input
                     label='Mileage'
-                    type='text'
+                    type='number'
                     name='mileage'
                     size='lg'
                     required
@@ -81,6 +89,7 @@ const Modal = ({ open, handleOpen }) => {
                 </CardBody>
                 <CardFooter className='pt-0'>
                   <Button
+                  onClick={handleOpen}
                     type='submit'
                     className='bg-secondary text-primary'
                     fullWidth
