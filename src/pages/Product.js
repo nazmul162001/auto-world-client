@@ -1,13 +1,20 @@
 import { Button } from '@material-tailwind/react'
-import React, { useState } from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import { AiOutlineStar } from 'react-icons/ai'
 import CarDetailsModal from '../components/CarDetailsModal/CarDetailsModal'
 
 const Product = ({ data }) => {
   const [size, setSize] = useState(null)
+  const [singleData, setSingleData] = useState([])
+  const [carInfo, setCarInfo] = useState({})
+
+  useEffect(()=> {
+    axios.get('data.json').then(res => setSingleData(res.data))
+  },[])
 
   const handleOpen = (value) => setSize(value)
-  
+
   const {
     createdDay,
     createdTime,
@@ -20,6 +27,14 @@ const Product = ({ data }) => {
     price,
     _id,
   } = data
+
+  console.log(data)
+  const handleDetails = (id) => {
+    handleOpen('xxl')
+    const myData = singleData.find(d => d._id === id)
+    setCarInfo(myData)
+  }
+
   return (
     <div className='my-card p-5 bg-white rounded'>
       <div className='car-name flex justify-between'>
@@ -59,8 +74,10 @@ const Product = ({ data }) => {
       {/* price  */}
       <div className='flex justify-between items-center mt-2'>
         <h2 className='font-bold'>{price}$</h2>
-        <Button onClick={() => handleOpen('xxl')} className='bg-primary'>More Details</Button>
-        <CarDetailsModal size={size} handleOpen={handleOpen} />
+        <Button onClick={() => handleDetails(_id)} className='bg-primary'>
+          More Details
+        </Button>
+        <CarDetailsModal size={size} handleOpen={handleOpen} carInfo={carInfo} />
       </div>
     </div>
   )

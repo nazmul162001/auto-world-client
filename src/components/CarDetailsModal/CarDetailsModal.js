@@ -8,7 +8,19 @@ import {
   DialogFooter,
 } from '@material-tailwind/react'
 
-const CarDetailsModal = ({size, handleOpen}) => {
+const CarDetailsModal = ({ size, handleOpen, carInfo }) => {
+  const {
+    createdDay,
+    createdTime,
+    carName,
+    img,
+    mileage,
+    location,
+    engine,
+    transmission,
+    price,
+  } = carInfo
+
   return (
     <>
       <Fragment>

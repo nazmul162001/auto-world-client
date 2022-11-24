@@ -1,7 +1,5 @@
-import { Button } from "@material-tailwind/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { AiOutlineStar } from "react-icons/ai";
 import Product from "./Product";
 
 const Products = () => {
