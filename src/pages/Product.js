@@ -1,8 +1,13 @@
 import { Button } from '@material-tailwind/react'
-import React from 'react'
+import React, { useState } from 'react'
 import { AiOutlineStar } from 'react-icons/ai'
+import CarDetailsModal from '../components/CarDetailsModal/CarDetailsModal'
 
 const Product = ({ data }) => {
+  const [size, setSize] = useState(null)
+
+  const handleOpen = (value) => setSize(value)
+  
   const {
     createdDay,
     createdTime,
@@ -13,6 +18,7 @@ const Product = ({ data }) => {
     engine,
     transmission,
     price,
+    _id,
   } = data
   return (
     <div className='my-card p-5 bg-white rounded'>
@@ -53,7 +59,8 @@ const Product = ({ data }) => {
       {/* price  */}
       <div className='flex justify-between items-center mt-2'>
         <h2 className='font-bold'>{price}$</h2>
-        <Button className='bg-primary'>More Details</Button>
+        <Button onClick={() => handleOpen('xxl')} className='bg-primary'>More Details</Button>
+        <CarDetailsModal size={size} handleOpen={handleOpen} />
       </div>
     </div>
   )
