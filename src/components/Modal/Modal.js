@@ -3,14 +3,10 @@ import { Fragment } from 'react'
 import {
   Button,
   Dialog,
-  DialogHeader,
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
-  Typography,
   Input,
-  Checkbox,
   DialogBody,
 } from '@material-tailwind/react'
 
@@ -25,6 +21,7 @@ const Modal = ({ open, handleOpen }) => {
     const transmission = e.target.transmission.value;
     const price = e.target.price.value;
 
+    // post data to database here
     console.log(name, transmission, price, img, mileage, location, engine)
   }
 
