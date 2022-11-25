@@ -25,20 +25,20 @@ const SubDropDown = () => {
 
         <ul>
           <li className="flex items-center gap-1 bg-white rounded-md  mb-3">
-            <Checkbox id="check" color="red" defaultChecked />
-            <label htmlFor="check" className="text-softBlack text-sm">
+            <Checkbox id="bargaining" color="red" defaultChecked />
+            <label htmlFor="bargaining" className="text-softBlack text-sm">
               Possible bargaining
             </label>
           </li>
           <li className="flex items-center gap-1 bg-white rounded-md mb-3">
-            <Checkbox id="check" color="red" defaultChecked />
-            <label htmlFor="check" className="text-softBlack text-sm">
+            <Checkbox id="estate" color="red" defaultChecked />
+            <label htmlFor="estate" className="text-softBlack text-sm">
               Exchange for real estate
             </label>
           </li>
           <li className="flex items-center gap-1 bg-white rounded-md ">
-            <Checkbox id="check" color="red" defaultChecked />
-            <label htmlFor="check" className="text-softBlack text-sm">
+            <Checkbox id="exchange" color="red" defaultChecked />
+            <label htmlFor="exchange" className="text-softBlack text-sm">
               Car exchange
             </label>
           </li>

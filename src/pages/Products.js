@@ -6,7 +6,9 @@ const Products = () => {
   const [data, setData] = useState("");
 
   useEffect(() => {
-    axios.get("data.json").then((res) => setData(res.data));
+    axios
+      .get("https://auto-word-api-production.up.railway.app/api/product")
+      .then((res) => setData(res.data.data));
   }, []);
 
   return (
