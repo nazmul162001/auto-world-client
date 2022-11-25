@@ -13,7 +13,7 @@ const Navbar = ({ setShow, handleOpen }) => {
   useOnClickOutside(ref, () => setOpenSearch(false));
 
   return (
-    <nav className="h-[70px] lg:h-[56px] border-b-2 bg-[#F5F5F5] border-[#E6E6E6] w-full sticky top-0 left-0 z-50">
+    <nav className="h-[70px] lg:h-[56px] border-b-2 bg-[#F5F5F5] border-[#E6E6E6] w-full sticky top-0 left-0 z-40">
       <section className="w-full bg-green h-full justify-between grid grid-cols-3">
         <div className="flex items-center justify-start col-span-1 md:col-span-2">
           <h5
@@ -41,7 +41,7 @@ const Navbar = ({ setShow, handleOpen }) => {
           {openSearch && (
             <div
               ref={ref}
-              className="absolute h-[70px] w-full bg-white flex justify-center items-center transition-all duration-1000"
+              className="absolute h-[70px] w-full bg-white flex justify-center items-center transition-all duration-1000 z-50"
             >
               <div className="w-full mx-2 h-full">
                 <input
