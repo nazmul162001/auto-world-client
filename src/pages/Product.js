@@ -28,7 +28,7 @@ const Product = ({ data }) => {
     _id,
   } = data
 
-  console.log(data)
+  // console.log(data)
   const handleDetails = (id) => {
     handleOpen('xxl')
     const myData = singleData.find(d => d._id === id)
