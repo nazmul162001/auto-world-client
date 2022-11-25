@@ -1,74 +1,56 @@
 [
   {
-    "_id": 1,
-    "createdDay": "Yesterday",
-    "createdTime": "12:45",
-    "carName": "Ford explorer",
-    "img": "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?cs=srgb&dl=pexels-mike-b-170811.jpg&fm=jpg",
-    "mileage": "49 000 Km",
+    "car_name": "Ford explorer",
+    "image": "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?cs=srgb&dl=pexels-mike-b-170811.jpg&fm=jpg",
+    "mile_range": "49 000 Km",
     "location": "Dnipro",
     "engine": "305 Diesel",
     "transmission": "machine",
-    "price": "17 900"
+    "price": 7900
   },
   {
-    "_id": 2,
-    "createdDay": "Yesterday",
-    "createdTime": "3:45",
-    "carName": "Ferari Z10",
-    "img": "https://images.pexels.com/photos/119435/pexels-photo-119435.jpeg?auto=compress&cs=tinysrgb&w=600",
-    "mileage": "56 000 Km",
+    "car_name": "Ferari Z10",
+    "image": "https://images.pexels.com/photos/119435/pexels-photo-119435.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "mile_range": "56 000 Km",
     "location": "Canada",
     "engine": "400 Diesel",
     "transmission": "machine",
-    "price": "78 900"
+    "price": 78900
   },
   {
-    "_id": 3,
-    "createdDay": "Today",
-    "createdTime": "10:45",
-    "carName": "Rolse Royce",
-    "img": "https://images.pexels.com/photos/712618/pexels-photo-712618.jpeg?auto=compress&cs=tinysrgb&w=600",
-    "mileage": "70 000 Km",
+    "car_name": "Rolse Royce",
+    "image": "https://images.pexels.com/photos/712618/pexels-photo-712618.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "mile_range": "70 000 Km",
     "location": "Singapore",
     "engine": "500 Diesel",
     "transmission": "machine",
-    "price": "25 900"
+    "price": 25900
   },
   {
-    "_id": 4,
-    "createdDay": "Today",
-    "createdTime": "2:45",
-    "carName": "Toyota",
-    "img": "https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&w=600",
-    "mileage": "45 000 Km",
+    "car_name": "Toyota",
+    "image": "https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "mile_range": "45 000 Km",
     "location": "Japan",
     "engine": "300 Diesel",
     "transmission": "machine",
-    "price": "20 900"
+    "price": 20900
   },
   {
-    "_id": 5,
-    "createdDay": "yesterday",
-    "createdTime": "7:45",
-    "carName": "Ford explorer",
-    "img": "https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg?auto=compress&cs=tinysrgb&w=600",
-    "mileage": "55 000 Km",
+    "car_name": "Ford explorer",
+    "image": "https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "mile_range": "55 000 Km",
     "location": "Korea",
     "engine": "300 Diesel",
     "transmission": "machine",
-    "price": "18 900"
+    "price": 18900
   },
   {
-    "_id": 6,
-    "createdDay": "Today",
-    "createdTime": "1:45",
-    "carName": "Prado",
-    "img": "https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg?auto=compress&cs=tinysrgb&w=600",
-    "mileage": "59 000 Km",
+    "car_name": "Prado",
+    "image": "https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "mile_range": "59 000 Km",
     "location": "America",
     "engine": "308 Diesel",
     "transmission": "machine",
-    "price": "25 900"
+    "price": 25900
   }
 ]

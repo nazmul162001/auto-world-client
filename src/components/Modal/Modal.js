@@ -1,5 +1,5 @@
-import React from 'react'
-import { Fragment } from 'react'
+import React, { useEffect, useState } from "react";
+import { Fragment } from "react";
 import {
   Button,
   Dialog,
@@ -8,13 +8,16 @@ import {
   CardFooter,
   Input,
   DialogBody,
-} from '@material-tailwind/react'
-import {AiOutlineClose} from 'react-icons/ai'
+} from "@material-tailwind/react";
+import { AiOutlineClose } from "react-icons/ai";
 
 const Modal = ({ open, handleOpen }) => {
-
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const name = e.target.carName.value;
     const img = e.target.url.value;
     const mileage = e.target.mileage.value;
@@ -22,78 +25,97 @@ const Modal = ({ open, handleOpen }) => {
     const engine = e.target.engine.value;
     const transmission = e.target.transmission.value;
     const price = e.target.price.value;
-  
+
     // post data to database here
     // console.log(name, transmission, price, img, mileage, location, engine)
 
     // close modal
-    handleOpen()
-  }
+    handleOpen();
+  };
 
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  console.log(windowSize);
   return (
     <>
       <Fragment>
-        <Dialog  size='md' open={open} handler={handleOpen}>
-          <h2 className='text-center mt-5 text-2xl relative'>Sell Your Dream Car</h2>
-          <span onClick={()=> handleOpen()} className='absolute top-6 right-8 p-2 bg-secondary text-primary rounded-full'><AiOutlineClose className='text-xl' /> </span>
+        <Dialog size="md" open={open} handler={handleOpen}>
+          <h2 className="text-center mt-5 text-2xl relative">
+            Sell Your Dream Car
+          </h2>
+          <span
+            onClick={() => handleOpen()}
+            className="absolute top-6 right-8 p-2 bg-secondary text-primary rounded-full"
+          >
+            <AiOutlineClose className="text-xl" />{" "}
+          </span>
           <DialogBody>
-            <form onSubmit={handleSubmit} className='w-full'>
-              <Card className='w-full'>
-                <CardBody className='flex flex-col gap-4'>
+            <form onSubmit={handleSubmit} className="w-full">
+              <Card className="w-full">
+                <CardBody className="flex flex-col gap-4">
                   <Input
-                    label='Car Name'
-                    type='text'
-                    name='carName'
-                    size='lg'
+                    label="Car Name"
+                    type="text"
+                    name="carName"
+                    size="lg"
                     required
                   />
                   <Input
-                    label='Img URL'
-                    type='text'
-                    name='url'
-                    size='lg'
+                    label="Img URL"
+                    type="text"
+                    name="url"
+                    size="lg"
                     required
                   />
                   <Input
-                    label='Mileage'
-                    type='number'
-                    name='mileage'
-                    size='lg'
+                    label="Mileage"
+                    type="number"
+                    name="mileage"
+                    size="lg"
                     required
                   />
                   <Input
-                    label='location'
-                    type='text'
-                    name='location'
-                    size='lg'
+                    label="location"
+                    type="text"
+                    name="location"
+                    size="lg"
                     required
                   />
                   <Input
-                    label='engine'
-                    type='text'
-                    name='engine'
-                    size='lg'
+                    label="engine"
+                    type="text"
+                    name="engine"
+                    size="lg"
                     required
                   />
                   <Input
-                    label='transmission'
-                    type='text'
-                    name='transmission'
-                    size='lg'
+                    label="transmission"
+                    type="text"
+                    name="transmission"
+                    size="lg"
                     required
                   />
                   <Input
-                    label='price'
-                    type='number'
-                    name='price'
-                    size='lg'
+                    label="price"
+                    type="number"
+                    name="price"
+                    size="lg"
                     required
                   />
                 </CardBody>
-                <CardFooter className='pt-0'>
+                <CardFooter className="pt-0">
                   <Button
-                    type='submit'
-                    className='bg-secondary text-primary'
+                    type="submit"
+                    className="bg-secondary text-primary"
                     fullWidth
                   >
                     Add a Car
@@ -105,7 +127,7 @@ const Modal = ({ open, handleOpen }) => {
         </Dialog>
       </Fragment>
     </>
-  )
-}
+  );
+};
 
-export default Modal
+export default Modal;
