@@ -25,7 +25,7 @@ const CarDetailsModal = ({ size, handleOpen, carInfo }) => {
   return (
     <>
       <Fragment>
-        <Dialog open={size === 'xxl'} size={size || 'md'} handler={handleOpen}>
+        <Dialog className='overflow-y-auto' open={size === 'xxl'} size={size || 'md'} handler={handleOpen}>
           <DialogHeader className='text-lg md:text-xl flex justify-center items-center w-full text-softBlack relative'>
             More Details About Your Dream Car
           </DialogHeader>
