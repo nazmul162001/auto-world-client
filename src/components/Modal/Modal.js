@@ -12,6 +12,7 @@ import {
 import {AiOutlineClose} from 'react-icons/ai'
 
 const Modal = ({ open, handleOpen }) => {
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const name = e.target.carName.value;
@@ -23,7 +24,7 @@ const Modal = ({ open, handleOpen }) => {
     const price = e.target.price.value;
   
     // post data to database here
-    console.log(name, transmission, price, img, mileage, location, engine)
+    // console.log(name, transmission, price, img, mileage, location, engine)
 
     // close modal
     handleOpen()
@@ -32,7 +33,7 @@ const Modal = ({ open, handleOpen }) => {
   return (
     <>
       <Fragment>
-        <Dialog size='md' open={open} handler={handleOpen}>
+        <Dialog  size='md' open={open} handler={handleOpen}>
           <h2 className='text-center mt-5 text-2xl relative'>Sell Your Dream Car</h2>
           <span onClick={()=> handleOpen()} className='absolute top-6 right-8 p-2 bg-secondary text-primary rounded-full'><AiOutlineClose className='text-xl' /> </span>
           <DialogBody>
