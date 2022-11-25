@@ -1,17 +1,12 @@
 import { Button } from "@material-tailwind/react";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { AiOutlineStar } from "react-icons/ai";
 import CarDetailsModal from "../components/CarDetailsModal/CarDetailsModal";
 
 const Product = ({ data }) => {
   const [size, setSize] = useState(null);
-  const [singleData, setSingleData] = useState([]);
   const [carInfo, setCarInfo] = useState({});
-
-  useEffect(() => {
-    axios.get("data.json").then((res) => setSingleData(res.data));
-  }, []);
 
   const handleOpen = (value) => setSize(value);
 
@@ -26,11 +21,12 @@ const Product = ({ data }) => {
     _id,
   } = data;
 
-  // console.log(data)
-  const handleDetails = (id) => {
+  const handleDetails = async (id) => {
+    console.log(id);
     handleOpen("xxl");
-    const myData = singleData.find((d) => d._id === id);
-    setCarInfo(myData);
+    axios
+      .get(`https://auto-word-api-production.up.railway.app/api/product/${id}`)
+      .then((res) => setCarInfo(res.data.data));
   };
 
   return (

@@ -10,6 +10,7 @@ import {
   DialogBody,
 } from "@material-tailwind/react";
 import { AiOutlineClose } from "react-icons/ai";
+import axios from "axios";
 
 const Modal = ({ open, handleOpen }) => {
   const [windowSize, setWindowSize] = useState({
@@ -18,15 +19,27 @@ const Modal = ({ open, handleOpen }) => {
   });
   const handleSubmit = (e) => {
     e.preventDefault();
-    const name = e.target.carName.value;
-    const img = e.target.url.value;
-    const mileage = e.target.mileage.value;
+    const car_name = e.target.carName.value;
+    const image = e.target.url.value;
+    const mile_range = e.target.mileage.value;
     const location = e.target.location.value;
     const engine = e.target.engine.value;
     const transmission = e.target.transmission.value;
     const price = e.target.price.value;
 
     // post data to database here
+    axios
+      .post("https://auto-word-api-production.up.railway.app/api/product", {
+        car_name,
+        image,
+        mile_range,
+        location,
+        engine,
+        transmission,
+        price,
+      })
+      .then(() => alert("Successfully added product"));
+
     // console.log(name, transmission, price, img, mileage, location, engine)
 
     // close modal

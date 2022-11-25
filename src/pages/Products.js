@@ -9,7 +9,7 @@ const Products = () => {
     axios
       .get("https://auto-word-api-production.up.railway.app/api/product")
       .then((res) => setData(res.data.data));
-  }, []);
+  }, [data]);
 
   return (
     <section className="product p-4 gap-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
