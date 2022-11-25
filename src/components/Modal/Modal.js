@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Fragment } from "react";
 import {
   Button,
@@ -12,6 +12,11 @@ import {
 import { AiOutlineClose } from "react-icons/ai";
 
 const Modal = ({ open, handleOpen }) => {
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const name = e.target.carName.value;
@@ -29,16 +34,38 @@ const Modal = ({ open, handleOpen }) => {
     handleOpen();
   };
 
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  console.log(windowSize);
   return (
     <>
       <Fragment>
-        <Dialog size="md" open={open} handler={handleOpen}>
+        <Dialog
+          size={
+            windowSize.width > "800"
+              ? "md"
+              : windowSize.width > "640"
+              ? "lg"
+              : "xxl"
+          }
+          open={open}
+          handler={handleOpen}
+        >
           <h2 className="text-center mt-5 text-2xl relative">
             Sell Your Dream Car
           </h2>
           <span
             onClick={() => handleOpen()}
-            className="absolute top-6 right-8 p-2 bg-secondary text-primary rounded-full"
+            className="absolute  cursor-pointer top-6 right-8 p-2 bg-secondary text-primary rounded-full"
           >
             <AiOutlineClose className="text-xl" />{" "}
           </span>
