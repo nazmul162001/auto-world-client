@@ -57,11 +57,20 @@ const Modal = ({ open, handleOpen }) => {
     handleResize();
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  console.log(windowSize);
   return (
     <>
       <Fragment>
-        <Dialog size="md" open={open} handler={handleOpen}>
+        <Dialog
+          size={
+            windowSize.width > "800"
+              ? "md"
+              : windowSize.width > "640"
+              ? "lg"
+              : "xxl"
+          }
+          open={open}
+          handler={handleOpen}
+        >
           <h2 className="text-center mt-5 text-2xl relative">
             Sell Your Dream Car
           </h2>
